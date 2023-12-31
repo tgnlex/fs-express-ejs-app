@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>Home</title>
+  <%- include('../partials/head.ejs'); %> 
+  
+</head>
+  <body>
+    <header>
+      <%- include('../partials/nav.ejs'); %>
+      <button class="btn" >
+        <a href="/signin">Login</a>
+      </button>
+    </header>
+    <main id="app" class="container">
+      
+      <%- include('../partials/search.ejs'); %>
+      <%- include('../partials/upload.ejs'); %>
+    </main>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

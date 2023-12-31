@@ -1,0 +1,10 @@
+<form id="search-form" >
+<input class="form-control" type="search" name="search"
+    hx-post="/search"
+    hx-trigger="keyup changed delay:500ms"
+    hx-target="#search-results"
+    placeholder="Search..."
+>
+<button type="submit">Submit</button>
+</form>
+<div id="search-results"></div>
