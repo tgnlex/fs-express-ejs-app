@@ -2,25 +2,20 @@ const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
-
+const {statusHandler } = require('./handlers.js')
 const HOST = 'localhost';
 const PORT = 3000;
 const app = express()
 
 const upload = multer({dest: 'uploads/'})
 
-const uploadImage = upload.fields(
-    [
-        { name: 'avatar', maxCount: 1}, 
-        { name: 'uploads', maxCount: 8}
-    ]
-);
 
 app.set('view engine', 'ejs');
-app.use(express.json())
-app.use(express.static('files'));
+app.use(express.urlencoded({extended: true}))
+app.use(express.static('uploads'));
 app.use(express.static('public'));
 app.use(express.static('data'));
+app.use(express.static('assets'))
 app.use(cors());
 
                 /* Page Routes */ 
@@ -39,16 +34,15 @@ app.get('/signin', (req, res, next) => {
 
 
 app.get('/status', (req, res, next) => {
-  const status = {
-    "Status": "Running"
-  };
-  if (status === true) {
-    res.send(status)
-  } else {
-    res.send('An error has ocurred, please verify to ensure the server is correctly operating.')
-  }
-})
-
+        const status = {
+            "Status": "Running"
+        };
+        if (status === true) {
+          res.send(200)  
+        } else {
+            console.log('An error has ocurred, please verify to ensure the server is correctly operating.')
+        }
+    })
 // ######################################################## //
                 /**  Authentication Routes **/
 app.post('/signup', () => {
@@ -73,10 +67,12 @@ app.post('/profile', upload.single('avatar'), (req, res, next) => {
     console.log(req.avatar);
 });
 */
-app.post('/uploads', upload.array('files', 12), (req, res, next) => {
+app.post('/uploads', upload.single('files'), (req, res, next) => {
     console.log('[HTTP]: "/uploads" Endpoint Hit.' )
-    console.log(req.files)
-
+    const title = req.body.filename;
+    const file = req.file;
+    console.log(title)
+    console.log(file)
 });
 
 // ######################################################## //

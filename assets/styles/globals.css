@@ -1,0 +1,33 @@
+.spacer {
+    height: 70px;
+}
+.container {
+    border: 2px solid black;
+}
+#nav-login {
+  margin-left: 500%;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 20px;
+
+}
+
+#search-bar {
+  width: 95%;
+  height: 40px;
+}
+#search-btn {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  background-color: lightgreen;
+}
+
+#upload-form-header {
+    margin-left: 40%
+}

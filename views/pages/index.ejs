@@ -5,19 +5,17 @@
 <head>
   <title>Home</title>
   <%- include('../partials/head.ejs'); %> 
-  
 </head>
   <body>
     <header>
       <%- include('../partials/nav.ejs'); %>
-      <button class="btn" >
-        <a href="/signin">Login</a>
-      </button>
-    </header>
+    </header>      
+    <%- include('../partials/search.ejs'); %>      
+    <div class="spacer"></div>
     <main id="app" class="container">
-      
-      <%- include('../partials/search.ejs'); %>
+      <h2 id="upload-form-header">File Upload</h2>
       <%- include('../partials/upload.ejs'); %>
+      <div class="spacer"></div>
     </main>
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
