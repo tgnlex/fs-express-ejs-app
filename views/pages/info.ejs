@@ -1,26 +1,23 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-  <title>Home</title>
-  <%- include('../partials/head.ejs'); %> 
+  <title>Sign In</title>
+  <%- include('../partials/head'); %> 
 </head>
-  <body>
+<body>
     <header>
       <%- include('../partials/nav.ejs'); %>
-    </header>      
-    <%- include('../partials/search.ejs'); %>      
-    <div class="spacer"></div>
+    </header>
     <main id="app" class="container">
-      <h2 id="upload-form-header">File Upload</h2>
-      <%- include('../partials/upload.ejs'); %>
-      <div class="spacer"></div>
+      <button id="fetch-btn" class="btn btn-dark">
+        Log Uploads
+      </button>
     </main>
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
     <script type="module" src="/scripts/main.js"></script>
     <script type="py" src="/scripts/main.py"></script>
-
-  </body>
+    <script type="module" src="/scripts/fetchAllUploads.js"></script>
+</body>
 </html>
