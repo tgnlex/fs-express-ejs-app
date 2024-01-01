@@ -1,11 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
-const path = require('path');
+const createServer = require('node:http');
 const fs = require('fs')
+const { Server } = require('socket.io');
 const HOST = 'localhost';
 const PORT = 3000;
 const app = express()
+const server = createServer(app);
+const io = new Server(server)
+
 const upload = multer({dest: 'uploads/'})
 
 const errMsg = `[HTTP]: An error has occurred`;
@@ -85,7 +89,7 @@ app.post('/info/all-files', (req, res, next) => {
         console.log(file)
     })
       res.send(files);
-
+ 
   });
 });
 app.post('/uploads', upload.single('files'), (req, res, next) => {
@@ -118,7 +122,19 @@ app.post('/search', (req, res, next) => {
     res.send() 
 });
 
+// ######################################################## //
+            /** Web Sockets **/
+    
+io.on('connection', (socket) => {
+  console.log(`[SOCKET]: A user connected via websocket.`);
+  socket.on('disconnect', () => {
+    console.log(`[SOCKET]: User disconnected from socket server.`);
+  });
+});
 
-app.listen(PORT, (req, res, next) => {
+
+
+
+server.listen(PORT, (req, res, next) => {
     console.log(`[HTTP]: Server running at http://${HOST}:${PORT}/` )
 });
