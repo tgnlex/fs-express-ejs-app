@@ -2,7 +2,10 @@
     height: 70px;
 }
 .container {
+    display: flex;
+    flex-direction: column;
     border: 2px solid black;
+    
 }
 #nav-login {
   margin-left: 500%;
@@ -28,6 +31,14 @@
   background-color: lightgreen;
 }
 
+#fetch-btn {
+  align-self: center;
+  margin-top: 25px;
+  margin-bottom: 75px;
+}
+#info-heading {
+  align-self: center;
+}
 #upload-form-header {
     margin-left: 40%
 }
