@@ -27,6 +27,9 @@
   margin-top: 20px;
 
 }
+#search-results {
+  height: 400px;
+}
 
 #search-bar {
   width: 90%;
@@ -41,11 +44,6 @@
   background-color: lightgreen;
 }
 
-#fetch-uploads-btn {
-  align-self: center;
-  margin-top: 25px;
-  margin-bottom: 75px;
-}
 #info-heading {
   align-self: center;
 }
