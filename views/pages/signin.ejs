@@ -4,22 +4,17 @@
 
 <head>
   <title>Sign In</title>
-  <%- include('../partials/head'); %> 
+  <%- include('../partials/global/head.ejs'); %> 
   
 </head>
 <body>
   <header>
-      <%- include('../partials/nav.ejs'); %>
+      <%- include('../partials/global/nav.ejs'); %>
   </header>
   <main id="app" class="container">  
-    <%- include('../partials/search.ejs'); %>
-    <%- include('../partials/upload.ejs'); %>
-  </main>
-<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
-<script type="module" src="/scripts/main.js"></script>
-<script type="py" src="/scripts/main.py"></script>
-<%- include('../partials/socket.ejs') -%>
 
+  </main>
+  <%- include('../partials/scripts/imports.ejs') -%>
+  <%- include('../partials/scripts/clock.ejs') -%>
 </body>
 </html>

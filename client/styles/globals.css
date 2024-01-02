@@ -1,0 +1,64 @@
+.spacer {
+    height: 70px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+}
+#nav-login {
+  margin-left: 900px;
+}
+
+#clock {
+  border: 2px solid black;
+}
+#clock h3 {
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 20px;
+
+}
+
+#search-bar {
+  width: 90%;
+  height: 40px;
+  margin-left: 20px;
+}
+#search-btn {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  background-color: lightgreen;
+}
+
+#fetch-uploads-btn {
+  align-self: center;
+  margin-top: 25px;
+  margin-bottom: 75px;
+}
+#info-heading {
+  align-self: center;
+}
+#upload-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+#upload-form-header {
+  margin-bottom: 25px;
+}
+#upload-btn {
+  margin-top: 10px;
+  width: 75px;
+}
