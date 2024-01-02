@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
-const createServer = require('node:http');
+const {createServer} = require('node:http');
 const fs = require('fs')
 const { Server } = require('socket.io');
 const HOST = 'localhost';
@@ -125,14 +125,18 @@ app.post('/search', (req, res, next) => {
 // ######################################################## //
             /** Web Sockets **/
     
-io.on('connection', (socket) => {
+io.on('connect', (socket) => {
   console.log(`[SOCKET]: A user connected via websocket.`);
+  
+  setInterval(function () {
+    let date = new Date().toLocaleTimeString()
+    socket.send(date)
+  }, 1000)
+  
   socket.on('disconnect', () => {
     console.log(`[SOCKET]: User disconnected from socket server.`);
   });
 });
-
-
 
 
 server.listen(PORT, (req, res, next) => {

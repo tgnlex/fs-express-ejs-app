@@ -4,11 +4,22 @@
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 2px solid black;
     
 }
 #nav-login {
-  margin-left: 500%;
+  margin-left: 900px;
+
+}
+
+#clock {
+  border: 2px solid black;
+}
+#clock h3 {
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 #search-form {
@@ -20,8 +31,9 @@
 }
 
 #search-bar {
-  width: 95%;
+  width: 90%;
   height: 40px;
+  margin-left: 20px;
 }
 #search-btn {
   border-radius: 100%;
@@ -39,6 +51,16 @@
 #info-heading {
   align-self: center;
 }
+#upload-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
 #upload-form-header {
-    margin-left: 40%
+  margin-bottom: 25px;
+}
+#upload-btn {
+  margin-top: 10px;
+  width: 75px;
 }
