@@ -80,18 +80,7 @@ app.post('/profile', upload.single('avatar'), (req, res, next) => {
     console.log(req.avatar);
 });
 */
-app.post('/info/files', (req, res, next) => {
-  console.log(`${hitMsg} "/info/files"`)  
-  fs.readdir(`storage/uploads/`, function (err, files) {
-    if (err) {
-     return console.log(`${errMsg}`);
-    }
-    files.forEach(function (file) {
-        console.log(file)
-        res.write(`<p>${file}</p>`)
-    })
-  });
-});
+
 app.post('/upload', upload.single('upload'), (req, res, next) => {
   console.log(`${hitMsg} "/uploads"` )
   logger.info(`${hitMsg} "/uploads"` )
