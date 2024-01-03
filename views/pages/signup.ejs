@@ -1,0 +1,49 @@
+
+<html lang="en">
+
+<head>
+  <title>Sign Up</title>
+  <%- include('../partials/global/head.ejs'); %> 
+  
+</head>
+<body>
+  <header>
+      <%- include('../partials/global/nav.ejs'); %>
+  </header>
+  <main id="signup" class="container">  
+    <h2>Create a new user account!</h2>
+    <form class="form" id="signup-form" action="/signup/auth" method="post">
+        <label for="user">Enter a username.</label>
+        <input 
+          placeholder="Username...."
+          type="text"
+          id="user-signup" 
+          name="username" 
+          class="form-control"
+          required
+          />
+          <label for="email">Enter a email.</label>
+          <input 
+            placerholder="Email..."
+            type="email"
+            id="email-signup" 
+            name="email" 
+            class="form-control"
+            required
+            />
+        <label for="password">Enter a password.</label>
+        <input 
+          placeholder="Password..."
+          type="password"
+          id="password-signup" 
+          name="password" 
+          class="form-control"
+          required
+          />
+        <button type="submit">Submit</button>
+      </form>
+  </main>
+  <%- include('../partials/scripts/imports.ejs') -%>
+  <%- include('../partials/scripts/clock.ejs') -%>
+</body>
+</html>

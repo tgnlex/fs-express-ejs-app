@@ -1,0 +1,24 @@
+<form id="upload-form" action="/upload/file" enctype="multipart/form-data" method="post">
+    <label for="title">Filename:</label>
+    <input 
+      id="name"
+      type="text" 
+      class="form-control" 
+      name="name" 
+      placeholder="Enter a name for your file." 
+      required
+      />
+      
+      <input 
+      id="file-upload-in"
+      type="file" 
+      class="form-control-file" 
+      name="upload" 
+      required 
+      />
+    <input 
+      id="upload-btn" 
+      type="submit"  
+      class="btn btn-dark" 
+      value="Upload">
+</form>

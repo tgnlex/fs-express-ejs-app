@@ -1,6 +1,6 @@
-const winston = require('winston')
-const {createLogger, format, transports} = require('winston')
-const {combine, timestamp, json} = winston.format;
+import  winston from 'winston'
+import {createLogger, format, transports} from 'winston'
+const  {combine, timestamp, json} = winston.format;
 const errorFilter = format((info, opts) => {
     return info.level === 'error' ? info : false;
   });
@@ -11,7 +11,7 @@ const errorFilter = format((info, opts) => {
   
 
 
-const logger = createLogger({
+export const logger = createLogger({
     level: 'info', 
     format: format.combine(
         format.timestamp({
@@ -35,6 +35,3 @@ const logger = createLogger({
     ]
 });
 
-module.exports = {
-    logger
-}

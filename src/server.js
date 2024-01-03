@@ -1,19 +1,23 @@
-const express = require('express');
-const cors = require('cors');
-const compression = require('compression')
-const { createServer } = require('node:http');
-const fs = require('fs')
-const {logger} = require('./lib/logger.js');
-const { Server } = require('socket.io');
-const { errMsg, hitMsg, uploadErrMsg } = require('./vars/strings.js');
-const { HOST, PORT } = require('./vars/hostname.js');
-const {upload, filestore, avatar} = require('./lib/mult.js');
-const { error } = require('node:console');
+import express from 'express';
+import cors from 'cors';
+import  compression from 'compression';
+import { createServer } from 'node:http';
+import fs from 'fs';
+import {logger} from './lib/logger.js';
+import { Server } from 'socket.io';
+import { errMsg, hitMsg, uploadErrMsg } from './vars/strings.js';
+import { HOST, PORT } from './vars/hostname.js';
+import {upload, filestore, avatar} from './lib/mult.js';
+import {PrismaClient} from '@prisma/client';
+import {createUser} from './db/prisma.js';
 const app = express()
 const server = createServer(app);
 const io = new Server(server);
 
+const prisma = new PrismaClient();
+
 app.set('view engine', 'ejs');
+app.use(compression());
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('client'));
@@ -34,11 +38,23 @@ app.get('/search', (req, res, next) => {
     res.render('pages/search.ejs');
 });
 
-app.get('/signin', (req, res, next) => {
-    console.log(`${hitMsg} "/signin"`)
-    logger.info(`${hitMsg} "/signin"` );
+app.get('/upload', (req, res, next) => {
+  console.log(`${hitMsg} "/upload"`);
+  logger.info(`${hitMsg} "/upload"`);
+  res.render('pages/upload.ejs');
+})
 
-    res.render('pages/signin.ejs');
+app.get('/login', (req, res, next) => {
+    console.log(`${hitMsg} "/login"`)
+    logger.info(`${hitMsg} "/login"` );
+    res.render('pages/login.ejs');
+});
+
+app.get('/signup', (req, res, next) => {
+  console.log(`${hitMsg} "/signup"`)
+  logger.info(`${hitMsg} "/signup"` );
+
+  res.render('pages/signup.ejs');
 });
 
 // ######################################################## //
@@ -57,16 +73,30 @@ app.get('/status', (req, res, next) => {
 });
 // ######################################################## //
                 /**  Authentication Routes **/
-app.post('/signup', () => {
-  console.log(`${hitMsg} "/signup"`);    
-  logger.info(`${hitMsg} "/signup"` );
 
 
+app.post('/login/auth', (req, res, next) => {
+  console.log(`${hitMsg} "/login/auth"`);    
+  logger.info(`${hitMsg} "/login/auth"` );
+  let username= req.body.user;
+  let password = req.body.password
+  console.log(`User: ${username}, Pass: ${password}}`);
+  console.log()
+
+  res.redirect("/login")
 });
 
-app.post('/login', () => {
-  console.log(`${hitMsg} "/login"`);    
-  logger.info(`${hitMsg} "/login"` );
+app.post('/signup/auth', (req, res, next) => {
+  console.log(`${hitMsg} "/signup"`);    
+  logger.info(`${hitMsg} "/signup"` );
+  createUser(req)
+    .catch((e) => {
+      throw e;
+    })
+    .finally(async () => {
+      await prisma.$disconnect();
+    })
+    res.redirect('/signup')
 });
 
 app.get('/user', () => {
@@ -81,7 +111,7 @@ app.post('/profile', upload.single('avatar'), (req, res, next) => {
 });
 */
 
-app.post('/upload', upload.single('upload'), (req, res, next) => {
+app.post('/upload/file', upload.single('upload'), (req, res, next) => {
   console.log(`${hitMsg} "/uploads"` )
   logger.info(`${hitMsg} "/uploads"` )
   const oldName = `storage/uploads/${req.file.filename}`;

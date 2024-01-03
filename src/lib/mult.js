@@ -1,10 +1,5 @@
-const multer = require('multer');
+import multer from 'multer';
 
-const filestore = multer({storage: 'storage/files'});
-const upload = multer({dest: 'storage/uploads/'});
-const avatar = multer( {dest: 'storage/avatar'})
-module.exports = {
-    filestore,
-    upload,
-    avatar
-};
+export const filestore = multer({storage: 'storage/files'});
+export const upload = multer({dest: 'storage/uploads/'});
+export const avatar = multer( {dest: 'storage/avatar'})

@@ -7,12 +7,25 @@
     align-items: center;
     border: 2px solid black;
 }
-#nav-login {
-  margin-left: 900px;
+#nav-heading {
+  margin-left: 25px;
 }
-
+#nav-login {
+  margin-left: 520px;
+  margin-right: 25px;
+}
+#nav-home {
+  margin-left: 25px;
+}
+#nav-upload {
+  margin-left: 25px;
+}
+#nav-search {
+  margin-left: 25px;
+}
 #clock {
   border: 2px solid black;
+  margin-right: 0px;
 }
 #clock h3 {
   margin-top: 5px;
@@ -26,6 +39,13 @@
   width: 100%;
   margin-top: 20px;
 
+}
+#login-form {
+  display: flex;
+  flex-direction: column;
+}
+.login-label {
+  align-self: center;
 }
 #search-results {
   height: 400px;
@@ -44,9 +64,12 @@
   background-color: lightgreen;
 }
 
-#info-heading {
+#login-btn {
   align-self: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
 #upload-form {
   display: flex;
   flex-direction: column;

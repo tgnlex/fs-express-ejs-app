@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>Home</title>
+  <title>Upload Files</title>
   <%- include('../partials/global/head.ejs'); %> 
 </head>
 <body>
@@ -12,7 +12,9 @@
   </header>      
     <div class="spacer"></div>
     <main id="app" class="container">
-      
+      <h2 id="upload-form-header">File Upload</h2>
+      <%- include('../partials/upload/upload_form.ejs'); %>
+      <div class="spacer"></div>
     </main>  
   <%- include('../partials/scripts/imports.ejs') %>
   <%- include('../partials/scripts/clock.ejs') %>
