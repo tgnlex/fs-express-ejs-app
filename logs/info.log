@@ -186,3 +186,9 @@
 {"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-02 18:31:56"}
 {"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-02 18:32:14"}
 {"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-02 18:32:14"}
+{"level":"info","message":"Server online!","timestamp":"2024-01-02 19:04:21"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-02 19:04:22"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/login\"","timestamp":"2024-01-02 19:04:24"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-02 19:04:25"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-02 19:04:40"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-02 19:04:40"}
