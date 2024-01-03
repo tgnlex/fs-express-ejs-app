@@ -11,10 +11,13 @@
   margin-left: 25px;
 }
 #nav-login {
-  margin-left: 520px;
+  margin-left: 400px;
   margin-right: 25px;
 }
 #nav-home {
+  margin-left: 25px;
+}
+#nav-post {
   margin-left: 25px;
 }
 #nav-upload {
@@ -82,4 +85,17 @@
 #upload-btn {
   margin-top: 10px;
   width: 75px;
+}
+#new-post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#post-title-input {
+  width: 200px;
+}
+#post-content-input {
+  width: 500px;
+  height: 300px;
+  align-content: first baseline;
 }

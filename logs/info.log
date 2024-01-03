@@ -192,3 +192,30 @@
 {"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-02 19:04:25"}
 {"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-02 19:04:40"}
 {"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-02 19:04:40"}
+{"level":"info","message":"Server online!","timestamp":"2024-01-02 19:07:43"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-02 19:07:46"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/upload\"","timestamp":"2024-01-02 19:07:48"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/search\"","timestamp":"2024-01-02 19:07:49"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/upload\"","timestamp":"2024-01-02 19:07:50"}
+{"level":"info","message":"Server online!","timestamp":"2024-01-02 19:23:01"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-02 19:23:05"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-02 19:23:34"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-02 19:23:52"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-02 19:24:25"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-02 19:24:39"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:24:46"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:27:36"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:27:52"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:28:04"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:28:11"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:28:44"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:29:05"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:29:32"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:29:42"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:30:29"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:31:23"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:32:48"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:33:29"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:33:45"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:34:42"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:35:08"}

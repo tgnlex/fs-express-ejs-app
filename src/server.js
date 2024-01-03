@@ -9,7 +9,7 @@ import { errMsg, hitMsg, uploadErrMsg } from './vars/strings.js';
 import { HOST, PORT } from './vars/hostname.js';
 import {upload, filestore, avatar} from './lib/mult.js';
 import {PrismaClient} from '@prisma/client';
-import {createUser} from './db/prisma.js';
+import {createUser, createPost} from './db/prisma.js';
 const app = express()
 const server = createServer(app);
 const io = new Server(server);
@@ -31,6 +31,12 @@ app.get('/',  (req, res, next) => {
     logger.info(`${hitMsg} "/"` );
     res.render('pages/index.ejs');
 });
+
+app.get('/post', (req, res, next) => {
+  console.log(`${hitMsg} "/post"`);
+  logger.info(`${hitMsg} "/post"`);
+  res.render(`pages/post.ejs`);
+})
 
 app.get('/search', (req, res, next) => {
     console.log(`${hitMsg} "/search"`)
@@ -104,12 +110,7 @@ app.get('/user', () => {
   logger.info(`${hitMsg} "/user"` );
 });
 // ######################################################## //
-               /**  Image Upload Routes **/
-/*
-app.post('/profile', upload.single('avatar'), (req, res, next) => {
-    console.log(req.avatar);
-});
-*/
+               /**  File Upload Routes **/
 
 app.post('/upload/file', upload.single('upload'), (req, res, next) => {
   console.log(`${hitMsg} "/uploads"` )
@@ -127,6 +128,22 @@ app.post('/upload/file', upload.single('upload'), (req, res, next) => {
       res.redirect("/") 
   });
 });
+// ######################################################## //
+                /** New Post Route **/
+                
+app.post('/post/new', (req, res, next) => {
+  console.log(`${hitMsg}"/post/new"`)
+  logger.info(`${hitMsg} "/post/new"`)
+  createPost(req)
+  .catch((err) => {
+    console.log(err)
+    logger.error(err)
+  }).finally(async () => {
+    await prisma.$disconnect();
+  })
+  res.redirect("/post")
+})
+
 // ######################################################## //
                 /**  Search Routes **/
 app.post('/search/query', (req, res, next) => {

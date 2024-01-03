@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>Home</title>
+  <%- include('../partials/global/head.ejs'); %> 
+</head>
+<body>
+  <header>
+    <%- include('../partials/global/nav.ejs'); %>
+  </header>      
+    <div class="spacer"></div>
+    <main id="app" class="container">
+      <h2>Write a new Post</h2>
+      <form id="new-post-form" method="post" action="/posts/new">
+        <label for="title">Post Title</label>
+        <input 
+        placeholder="Name your post..."
+        id="post-title-input"
+        class="form-control"
+        name="title"
+        type="text" 
+        required/>
+        <textarea 
+        placeholder="Write your post here..."
+        id="post-content-input"
+        class="form-control"
+        name="content"
+        type="text" 
+        required></textarea>
+        <input 
+        id="submit-post"
+        type="submit" 
+        class="btn btn-dark"
+        value="Submit Post" />
+      </form>
+    </main>  
+  <%- include('../partials/scripts/imports.ejs') %>
+  <%- include('../partials/scripts/clock.ejs') %>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
