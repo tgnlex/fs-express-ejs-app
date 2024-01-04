@@ -1,4 +1,5 @@
-import Joi from '@hapi/joi'
+import Joi from '@hapi/joi';
+
 export const registrationValidator = (data) => {
     const schema = Joi.object({
       username: Joi.string().min(6).required().alphanum(), 
@@ -6,9 +7,4 @@ export const registrationValidator = (data) => {
       email: Joi.string().min(6).required().alphanum(),
     })
     return schema.validate(data);
-  }
-  
-
-  module.exports = {
-    registrationValidator
-  }
+}

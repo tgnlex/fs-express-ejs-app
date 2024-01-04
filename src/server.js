@@ -3,10 +3,12 @@ import cors from 'cors';
 import  compression from 'compression';
 import { createServer } from 'node:http';
 import fs from 'fs';
+const session = require('express-session');
+import {auth} from './auth.js';
 import {logger} from './lib/logger.js';
 import { Server } from 'socket.io';
-import { errMsg, hitMsg, uploadErrMsg } from './vars/strings.js';
-import { HOST, PORT } from './vars/hostname.js';
+import { errMsg, hitMsg, uploadErrMsg } from './lib/strings.js';
+import { HOST, PORT } from './lib/hostname.js';
 import {upload, filestore, avatar} from './lib/mult.js';
 import {PrismaClient} from '@prisma/client';
 import {createUser, createPost} from './db/prisma.js';
@@ -21,6 +23,13 @@ app.use(compression());
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('client'));
+
+appp.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false, 
+  cookie: { secure: true}
+}));
 
 logger.info("Server online!")
 logger.error(new Error("An error occured:"))
@@ -81,16 +90,10 @@ app.get('/status', (req, res, next) => {
                 /**  Authentication Routes **/
 
 
-app.post('/login/auth', (req, res, next) => {
-  console.log(`${hitMsg} "/login/auth"`);    
-  logger.info(`${hitMsg} "/login/auth"` );
-  let username= req.body.user;
-  let password = req.body.password
-  console.log(`User: ${username}, Pass: ${password}}`);
-  console.log()
-
-  res.redirect("/login")
-});
+app.post('/login/auth', auth.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+}));
 
 app.post('/signup/auth', (req, res, next) => {
   console.log(`${hitMsg} "/signup"`);    

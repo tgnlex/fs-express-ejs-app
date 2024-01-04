@@ -10,11 +10,3 @@ db.serialize(function () {
     })
 })
 
-/* db.get(sql, [], (err, rows) => {
-    if (err) {
-        throw err;
-    }
-    rows.forEach((row) => {
-        console.log(row);
-    })
-}) */
