@@ -219,3 +219,16 @@
 {"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:33:45"}
 {"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:34:42"}
 {"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-02 19:35:08"}
+{"level":"info","message":"Server online!","timestamp":"2024-01-04 16:58:29"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-04 16:58:31"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-04 16:59:08"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/upload\"","timestamp":"2024-01-04 16:59:57"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/uploads\"","timestamp":"2024-01-04 17:00:37"}
+{"level":"info","message":"[HTTP]: File uploaded as storage/uploads/testi.jpg! ","timestamp":"2024-01-04 17:00:37"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-04 17:00:37"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/post\"","timestamp":"2024-01-04 17:00:41"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/search\"","timestamp":"2024-01-04 17:00:56"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/\"","timestamp":"2024-01-04 17:01:07"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/login\"","timestamp":"2024-01-04 17:01:18"}
+{"level":"info","message":"[HTTP]: Client hit endpoint:  \"/signup\"","timestamp":"2024-01-04 17:01:23"}
+{"level":"info","message":"Server online!","timestamp":"2024-01-04 17:30:19"}

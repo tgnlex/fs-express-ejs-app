@@ -3,7 +3,7 @@ import cors from 'cors';
 import  compression from 'compression';
 import { createServer } from 'node:http';
 import fs from 'fs';
-const session = require('express-session');
+import session from 'express-session';
 import {auth} from './auth.js';
 import {logger} from './lib/logger.js';
 import { Server } from 'socket.io';
@@ -24,7 +24,7 @@ app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('client'));
 
-appp.use(session({
+app.use(session({
   secret: 'secret',
   resave: false,
   saveUninitialized: false, 
